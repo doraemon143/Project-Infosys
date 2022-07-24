@@ -49,26 +49,49 @@ function email(){
 
 function phnum()
 		{
-			var e = document.querySelector("#select");
-			var p=document.querySelector("#field5").value;
-			var q=document.querySelector("#field4").value;
+			var p=document.querySelector("#us").value;
+			var q=document.querySelector("#in").value;
 			var pus=/^\d{3}-\d{3}-\d{4}$/
 			var pus1=/^[6-9]\d{9}$/
-			if((pus.test(p))&(q=="+1"))
-			{
-				document.querySelector(".wseven").style.visibility="hidden"
+			var india=document.getElementById('field5').value;
+			if(pus.test(india)&q=='ind'){
 				return true;
 			}
-			else if((pus1.test(p))&(q=="+91")){
-				document.querySelector(".wseven").style.visibility="hidden"
+			else if(pus1.test(india)&p=='usa'){
 				return true;
 			}
-			else
-			{
-				document.querySelector(".wseven").style.visibility="visible"
-				return false;
+			else{
+				document.getElementById('t').style.visibility='visible';
 			}
 		}
+function phnum1()
+		{
+			var p=document.querySelector("#us1").value;
+			var q=document.querySelector("#in1").value;
+			var pus=/^\d{3}-\d{3}-\d{4}$/
+			var pus1=/^[6-9]\d{9}$/
+			var india=document.querySelector('.sd23').value;
+			if(pus.test(india)&q=='ind'){
+				document.getElementById('t1').style.visibility='hidden';
+				return true;
+			}
+			else if(pus1.test(india)&p=='usa'){
+				document.getElementById('t1').style.visibility='hidden';
+				return true
+			}
+			else{
+				document.getElementById('t1').style.visibility='visible';
+			}
+		}
+function date(){
+	var dt=document.getElementById('field6').value;
+	if(dt==''){
+		return true;
+	}
+	else{
+		document.getElementById('rt').style.visibility='visible';
+	}
+}
 function Citizenship(){
 	var cs=document.querySelector("#field7").value;
 	var n=/^[a-z,A-Z][a-z, ,A-Z]*$/
@@ -81,16 +104,19 @@ function Citizenship(){
 		return false;
 	}
 }
-function passport(){
-	var b1=document.querySelector("#button1").checked
-	var b2=document.querySelector("#button2").checked
-	var r3=document.querySelector("#r3").checked
-	if(b1 || b2){
-		document.querySelector(".wleven").style.visibility="hidden";
+function address(){
+	var r=/^[a-zA-Z]+\[0-9]*[a-zA-Z]*/
+	var rd=document.getElementById('field8').value;
+	if(r.test('rd')){
+		document.getElementById('ui').style.visibility='hidden';
+		return true;
 	}
 	else{
-		document.querySelector(".wleven").style.visibility="visible";
+		document.getElementById('ui').style.visibility='visible';
 	}
+}
+function er(){
+		document.querySelector('.df').style.display='block';
 }
 function nextpage(){
 	fwar();
@@ -99,5 +125,8 @@ function nextpage(){
 	email();
 	phnum();
 	Citizenship();
-	return passport();
+	phnum1();
+	date();
+	address();
+	er();
 }

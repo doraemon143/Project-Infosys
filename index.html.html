@@ -61,7 +61,7 @@
 			</div>
 		</div>
 		<div class="question" id="photo">
-			<div class="warning wfive">&#9888; Profile Picture is required</div>
+			<div class="warning wfive">&#9888;Profile Picture is required</div>
 			<div class="inques">
 			<p><b>5. Upload recent passport size color photo</b></p>
 			<p class="p1">Please ensure the photograph size is within 512KB</p>
@@ -91,42 +91,42 @@
 			</div>
 		</div>
 		<div class="question" id="contactnum">
-			<div class="warning wseven">&#9888; Do provide values for all the fields</div>
+			<div class="warning wseven" id="t">&#9888; Do provide values for all the fields</div>
 			<div class="inques">
 					<p class="P12"><b>7. Preferred contact number</b></p><br>
 					<div id="country" style="display:inline;">
 						<label class="font">Country code*</label>
 						<br>
-						<select class="select1"><option>(+91)IND</option><option>(+1)USA</option></select>
+						<select class="select1"><option value="ind" id="in">(+91)IND</option><option value="usa" id="us">(+1)USA</option></select>
 					</div>
 					<div id="phn" style="display:inline ;">
-						<input type="number" id="field5" placeholder="Phone number *" onkeyup="phnum();">
+						<input type="number" id="field5" placeholder="Phone number *" onchange="phnum();">
 					</div>
 				</div>
 			</div>
 			<div class="question">
-				<div class="warning weight">&#9888; Do provide values for all the fields</div>
+				<div class="warning weight" id="t1">&#9888; Do provide values for all the fields</div>
 				<div class="inques">
 					<div id="code2">
 						<p class="P13"><b>8. Alternate contact number</b><label class="font">(optional)</label></p><br>
 					<div id="country" style="display:inline;">
 						<label class="font">Country code</label>
 						<br>
-						<select class="select1" style="width:290px; height: 40px; margin-right:40px; border-top:none; border-left:none; border-right:none;"><option>(+91)IND</option><option>(+1)USA</option></select>
+						<select class="select1" style="width:290px; height: 40px; margin-right:40px; border-top:none; border-left:none; border-right:none;"><option value="ind" id="in1">(+91)IND</option><option value="usa" id="us1">(+1)USA</option></select>
 					</div>
 					<div id="phn" style="display:inline ;">
-						<input type="number" id="field5" placeholder="Phone number" onkeyup="phnum();">
+						<input type="number" id="field5" class="sd23" placeholder="Phone number" onchange="phnum1();">
 					</div>
 				</div>
 					</div>
 				</div>
 		<div class="question" id="dob">
-			<div class="warning wnine">&#9888; Date of birth is required</div>
+			<div class="warning wnine" id="rt">&#9888; Date of birth is required</div>
 			<div class="inques">
 				<p><b>9. Date of birth</b></p>
 				<p class="font">As per passport / legal document</p>
 				<!--<label><pre>Date<i style="color: red;">*</i> -->    
-				<input type="text" id="field6"  style="font-size: 20px; ">
+				<input type="date" id="field6"  style="font-size: 20px;" onchange="daate();">
 				</div>
 			</div>
 			<div class="question" id="citizenship">
@@ -139,7 +139,7 @@
 				</div>
 				</div>
 				<div class="question" id="citizenship">
-					<div class="warning wten">&#9888; The field is required</div>
+					<div class="warning wten" id="r3">&#9888; The field is required</div>
 					<label class="inques rado"><b>11.Do you have a passport?</b><button id="yes">YES</button><button id="no">NO</button></lable>
 						<label><i class='bx bx-check-circle'></i><i class='bx bx-x-circle'></i></label>
 				</div>
@@ -150,9 +150,9 @@
 				<hr id="hr1">
 				<p id="street"><b>Street/House Number</b></p>
 				<p  class="font">Please do not key in any personally identifiable information belonging to you or any other person(s) which is unrelated to the business purpose of this survey</p>
-				<input type="text" id="field8" placeholder="*">
-				<span 
-				style="color:#DE350B;font: 16px roboto; margin-top: 20px;" class="warning"><i class='bx bx-x-circle' id="icon"></i>  This field value is required</span>
+				<input type="text" id="field8" placeholder="*" onkeyup="address();">
+				<div 
+				style="color:#DE350B;font: 16px roboto; margin-top: 20px;background-color:white;" class="warning" id="ui"><i class='bx bx-x-circle' id="icon" style="position:relative;left: 0px;font-size: 20px;"></i>  This field value is required</div>
 				<hr id="hr2">
 				<p id="address2"><b>Address Line2</b>(optional)</p>
 				<p  class="font" id="street2">Please do not key in any personally identifiable information belonging to you or any other person(s) which is unrelated to the business purpose of this survey</p>
@@ -165,10 +165,10 @@
 				</div>
 			</div>
 			<center>
-				<button id="next" onclick="return nextpage();">NEXT PAGE</button>
+				<a href="#"><button id="next" onclick="return nextpage();">NEXT PAGE</button></a>
 			</center>
 </div>
-<div>
+<div class="df">
 	<div class="error">
 		Errors
 	</div>
